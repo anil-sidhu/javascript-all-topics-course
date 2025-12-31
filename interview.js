@@ -1,11 +1,5 @@
+const x = [1, 2, 3]; 
+const y = Object.assign([],x) 
+y.push(4);
 
-
-   
-let a = [1,2];
-let b = a;
-b += 3;
-// 1,23
-
-console.log(b);
-
-
+console.log(x);
