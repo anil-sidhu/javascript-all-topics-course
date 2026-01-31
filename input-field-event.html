@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <script>
+        function handleInputField(event){
+            console.log(event.target.name);
+            
+            
+        }
+        function handleKeyUp(){
+            console.log("handleKeyUp");
+            
+        }
+        function handleKeyDown(){
+            console.log("handleKeyDown");
+            
+        }
+        function handleFocus(){
+            console.log("start typing...");
+            
+        }
+        function handleBlur(event){
+           
+            console.log(event.target.name);
+            if(event.target.id="age" && event.target.value<=18){
+                alert("not a valid age")
+            }
+            
+        
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Input Field Events </h1>
+    <input type="text" 
+    oninput="handleInputField(event)"
+    onkeyup="handleKeyUp()"
+    onkeydown="handleKeyDown()"
+    onfocus="handleFocus()"
+    onblur="handleBlur(event)"
+
+     placeholder="enter name">
+     <input type="text" oninput="handleInputField(event)" onblur="handleBlur(event)" name="userAge" id="age" placeholder="enter age">
+     <input type="text" oninput="handleInputField(event)" name="userEmail" id="email" placeholder="enter email">
+
+</body>
+
+</html>
