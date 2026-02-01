@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" onblur="validateInputField(event)" id="user" placeholder="Enter User Name">
+        <br>
+        <span style="color: red;" id="user-message"></span>
+        <script>
+            function validateInputField(event){
+                console.log(event.target.value);
+                let val = event.target.value;
+                let validateEl= document.getElementById('user-message');
+                 validateEl.style.display="block"
+                if(val.length<4){
+                    validateEl.textContent= "min valid length is 4"
+                }else if(val.length>12){
+                    validateEl.textContent= "max valid length is 12"
+                }else{
+                    validateEl.textContent= ""
+                    validateEl.style.display="none"
+                }
+                
+            }
+        </script>
+    </body>
+</html>
