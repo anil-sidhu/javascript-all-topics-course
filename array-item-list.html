@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1> List of Array Item</h1>
+    <span>Element Position</span>
+    <input type="text" id="position" placeholder="enter position">
+    <br><br>
+    <span>Element Value</span>
+    <input type="text" id="value" placeholder="enter value">
+    <br>
+    <br>
+    <button onclick="displayElement()">Display Items</button>
+    <ul id="list">
+
+    </ul>
+    <script>
+        let users = ["anil", "sam", "sidhu", "peter"];
+        console.log(users);
+        function displayElement() {
+            let val = document.getElementById('value').value;
+            let pos = document.getElementById('position').value;
+            if (pos && val) {
+                users.splice(pos, 0, val)
+            }
+
+            let list = document.getElementById('list');
+            list.innerHTML = "";
+            for (let user of users) {
+                // console.log(user);
+                list.innerHTML += "<li>" + user + "</li>"
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
