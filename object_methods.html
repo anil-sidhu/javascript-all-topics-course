@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Object Methods</h1>
+    <script>
+        let userDetails = {
+            name: "Anil sidhu",
+            age: 29,
+            city: "gurgaon",
+            greet: function () {
+                return "Hello " + this.name + ", How are you";
+
+            },
+            hello: function (from) {
+                // return "Hello "+this.name+", How are you? this is "+ from;
+
+                return this.greet() + " this is " + from;
+            }
+        }
+
+        //    console.log(userDetails.greet());
+
+        console.log(userDetails.hello("peter"));
+
+
+    </script>
+</body>
+
+</html>
