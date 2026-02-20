@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Array Of Object</h1>
+
+    <ul id="user-list">
+
+    </ul>
+
+    <script>
+        let users = [
+            { name: 'anil', age: 29, email: 'anil@test.com' },
+            { name: 'sam', age: 25, email: 'sam@test.com' },
+            { name: 'peter', age: 34, email: 'peter@test.com' },
+        ]
+        let list= document.getElementById('user-list');
+        list.innerHTML="";
+        // for(let user of users){
+        //     list.innerHTML+="<li>Hello, User name is <b> "+user.name+" </b> and user age is <b> "+user.age+" </b></li>"
+        //     console.log(user.age);
+        // }
+        // users.map((user)=>{
+        //     list.innerHTML+="<li>Hello, User name is <b> "+user.name+" </b> and user age is <b> "+user.age+" </b></li>"
+        // })
+        users.forEach((user)=>{
+            list.innerHTML+="<li>Hello, User name is <b> "+user.name+" </b> and user age is <b> "+user.age+" </b></li>"
+        })
+       
+
+    </script>
+</body>
+
+</html>
