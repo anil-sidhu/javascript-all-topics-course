@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Promise in JavaScript</title>
+</head>
+
+<body>
+    <h1>Promise in JavaScript</h1>
+    <button onclick="handleLogin()" >Login</button>
+<script>
+
+function userLogin(){
+    let email="anil@test.com";
+        let password="1234567890"
+        return loginPromise= new Promise((resolve, reject)=>{
+            setTimeout(() => {
+            resolve({login:true,id:100})
+            }, 3000);
+        })
+}
+    function handleLogin(){
+        
+        const loginPromise=userLogin();
+        loginPromise.then((result)=>{
+            console.log(result);
+            if(result.login){
+                alert("go to profile page")
+            }else{
+                 alert("try again")
+            }
+            
+        })
+    }
+
+//     let a=10;
+//         let b=20;
+//         let c=30
+// const promise= new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+        
+//         resolve(a+b+c)
+//     }, 2000);
+// })
+
+// promise.then((result)=>{
+//     console.log(result);
+    
+// })
+
+
+ 
+</script>
+</body>
+
+</html>

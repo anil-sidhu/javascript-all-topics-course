@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Lexical scope in JS</title>
+</head>
+
+<body>
+    <h1>Lexical Scope in JS</h1>
+    <script>
+        // let a=10;
+        // function outer(){
+        //     let b=20;
+        //     console.log(a,b);
+        //     function inner(){
+        //         let c=30
+        //          console.log(a,b,c);
+        //     }
+        //     inner()
+        // }
+
+        // outer()
+
+        function greet(msg){
+            return function (name){
+                console.log(msg,name);
+                
+            }
+        }
+
+        const sayHello =greet("Hello");
+        sayHello("Sidhu")
+    </script>
+</body>
+
+</html>

@@ -24,12 +24,12 @@ false
 arr[3]=9 
  
   
-Scope 
-(function(){ 
-  var a = b = 3; 
-})(); 
-console.log("a defined? " + (typeof a !== 'undefined')); 
-console.log("b defined? " + (typeof b !== 'undefined')); 
+// Scope 
+// (function(){ 
+//   var a = b = 3; 
+// })(); 
+// console.log("a defined? " + (typeof a !== 'undefined')); 
+// console.log("b defined? " + (typeof b !== 'undefined')); 
  
  
 let a = {}; 
@@ -51,13 +51,13 @@ const data = [
 const [{ Address: { addressLine, pinCode } }] = data; 
  
  
-Hoisting with scope 
-var num = 10; 
-(()=>{ 
-console.log(num) 
-var num = 20; 
-console.log(num) 
-})() 
+// Hoisting with scope 
+// var num = 10; 
+// (()=>{ 
+// console.log(num) 
+// var num = 20; 
+// console.log(num) 
+// })() 
 ------------------------------ 
 console.log(a()) 
 const a = function (params) { 
@@ -135,14 +135,14 @@ after 0 sec
 after 00 sec 
 after 1 sec 
  
-Closure 
-function createTimers() { 
-    for (var i = 1; i <= 5; i++) { 
-        setTimeout(function() { 
-            console.log(i); 
-        }, 1000); 
-    } 
-} 
+// Closure 
+// function createTimers() { 
+//     for (var i = 1; i <= 5; i++) { 
+//         setTimeout(function() { 
+//             console.log(i); 
+//         }, 1000); 
+//     } 
+// } 
 ---------------------------- 
 let i; 
 for(i=0;i<3;i++){ 
@@ -195,32 +195,32 @@ export default function CounterComponent() {
 } 
  
 Assume there is no error in code give output of the react code, which hook will execute when and why ? 
-import { useState, useEffect, useCallback, useMemo } from "react"; 
-export default function ExampleComponent() { 
-  const [count, setCount] = useState(0); 
+// import { useState, useEffect, useCallback, useMemo } from "react"; 
+// export default function ExampleComponent() { 
+//   const [count, setCount] = useState(0); 
  
-  useEffect(() => { 
-    console.log("Count updated:"); 
-  }, []); 
+//   useEffect(() => { 
+//     console.log("Count updated:"); 
+//   }, []); 
  
-  const increment = useCallback(() => { 
-    console.log("useCallback:"); 
-  }, []); 
+//   const increment = useCallback(() => { 
+//     console.log("useCallback:"); 
+//   }, []); 
  
-  const squaredCount = useMemo(() => { 
-    console.log("Calculating squared count"); 
-   }, []); 
+//   const squaredCount = useMemo(() => { 
+//     console.log("Calculating squared count"); 
+//    }, []); 
  
-  return ( 
-    <div > 
-      {console.log("Rendering JSX")} {/* Console.log inside JSX */} 
-    </div> 
-  ); 
-} 
-Output- 
-Calculating squared count 
-Rendering JSX 
-Count updated: 
+//   return ( 
+//     <div > 
+//       {console.log("Rendering JSX")} {/* Console.log inside JSX */} 
+//     </div> 
+//   ); 
+// } 
+// Output- 
+// Calculating squared count 
+// Rendering JSX 
+// Count updated: 
  
 Write a counter component which will have a input with type number, a button and a span to display counter. Counter state will have 0 as default value and it will increment after 30 sec, if user add any value in input the counter will start counting from entered number in input, add a cosole.log in component to check rerendering and ask to optimize it. Evaluate how the component rerendering is handled. 
  
@@ -263,3 +263,31 @@ function createTimers() {
 } 
 
 
+
+
+
+
+
+1️⃣ useOptimistic (React)
+👉 How do you update UI instantly before API response?
+
+2️⃣ AbortController
+👉 How do you cancel API requests in JavaScript?
+
+3️⃣ Synthetic Events (React)
+👉 How React handles events differently from DOM?
+
+4️⃣ noopener & noreferrer
+👉 Why are these important in <a target="_blank">?
+
+5️⃣ useActionState (React)
+👉 How to manage async actions & form states?
+
+6️⃣ Tree Shaking
+👉 How bundlers remove unused code?
+
+7️⃣ Viewport Meta Tag
+👉 Why your UI breaks on mobile without it?
+
+8️⃣ Refs in React
+👉 When to use refs instead of state?

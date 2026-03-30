@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Closures in JS</title>
+</head>
+
+<body>
+    <h1>Closures in JS</h1>
+    <button onclick="counter.increment()" >Increment</button>
+    <button onclick="counter.decrement()" >Decrement </button>
+
+    <script>
+
+        function counterApp(){
+            let data=0;
+            return {
+                increment:function(){
+                    console.log(++data);
+                    
+                },
+                decrement:function(){
+                    console.log(--data);
+                }
+            }
+        }
+
+        let counter = counterApp();
+     
+
+
+        
+        // function  outer(){
+        //     let msg="this is outer function scope"
+        //      function inner(){
+        //         console.log(msg);
+                
+        //      }
+        //      return inner;
+        // }
+        // let result = outer();
+        // result();
+        // console.log(msg);
+        
+        
+    </script>
+</body>
+
+</html>

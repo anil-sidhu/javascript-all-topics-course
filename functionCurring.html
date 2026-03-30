@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Functions Currying in JS</title>
+</head>
+
+<body>
+    <h1>Functions Currying in JS</h1>
+    <button onclick="watchOutput(20)" >Click</button>
+    <script>
+        // function add(a,b){
+        //     return a+b
+        // }
+        // console.log(add(10,20));
+
+    //     function add(a){
+    //         return function(b){
+    //             return a+b
+    //         }
+    //     }
+    //   let out= add(10)
+
+    //   function watchOutput(b){
+    //     console.log(out(b));
+        
+    //   }
+
+    function logs(level){
+        return function(msg){
+            return "Info :"+ level + " , msg: "+msg;
+        }
+    }
+
+  console.log(logs("login")("user logged in successfully "))
+        
+        
+    </script>
+</body>
+
+</html>
