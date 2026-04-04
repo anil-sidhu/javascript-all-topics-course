@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Example of Promise</title>
+    </head>
+    <body>
+        <h1>Example of Promise</h1>
+        <script>
+    //  const url ="https://dummyjson.com/products";
+    //  const apiResult = fetch(url);
+    //  console.log(apiResult);
+    //  apiResult.then((response)=>{
+    //     response.json().then((result)=>{
+    //         console.log(result);
+            
+    //     })
+        
+    //  })
+   async function apiHandling(){
+          const url ="https://dummyjson.com/products";
+     let apiResult = await fetch(url);
+      apiResult= await apiResult.json();
+      console.log(apiResult);
+      
+    }
+
+    apiHandling()
+     
+        </script>
+    </body>
+</html>

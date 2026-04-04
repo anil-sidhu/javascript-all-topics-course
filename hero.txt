@@ -1,0 +1,11 @@
+MERN Hero
+15k
+React.js, Node.js, Express, MongoDB,
+AI tools usage
+Tailwind CSS, JS Basics, TypeScript,
+DSA & Interview Questions,
+Projects Deployment,Git, Jira
+Project
+
+AI tools usage (Cline, Copilot and cursor)
+Full stack project

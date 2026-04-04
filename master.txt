@@ -1,0 +1,18 @@
+Mern  Master 
+25k
+React.js,Node.js, Express, MongoDB,
+
+
+Tailwind CSS, JS Basics, TypeScript.
+DSA & Interview Questions.
+Project Deployment, Jira, Git 
+Projects
+
+
+//React with TS
+// Redux
+// GenAI.
+//System Design, Frontend Architecture, 
+Project Structure, Micro-front-end Basics 
+//Bootstrap
+//2nd project with GenAI (Full stack)

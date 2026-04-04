@@ -18,34 +18,49 @@ function userLogin(){
             }, 3000);
         })
 }
+
+function userToken(){
+        return loginPromise= new Promise((resolve, reject)=>{
+            setTimeout(() => {
+            reject({token:"$%#$%%$%$$"})
+            }, 5000);
+        })
+}
     function handleLogin(){
         
         const loginPromise=userLogin();
-        loginPromise.then((result)=>{
+        const tokenPromise=userToken();
+        Promise.all([loginPromise, tokenPromise]).then((result)=>{
             console.log(result);
-            if(result.login){
-                alert("go to profile page")
-            }else{
-                 alert("try again")
-            }
+            
+        }).catch((err)=>{
+            console.log(err);
             
         })
+
+        // Promise.race([loginPromise, tokenPromise]).then((result)=>{
+        //     console.log(result);
+            
+        // })
+
+        //  Promise.allSettled([loginPromise, tokenPromise]).then((result)=>{
+        //     console.log(result);
+            
+        // })
+
+        // loginPromise.then((result)=>{
+        //     console.log(result);
+        //     if(result.login){
+        //         alert("go to profile page")
+        //     }else{
+        //          alert("try again")
+        //     }
+            
+        // }).catch((err)=>{
+        //     console.log(err);
+            
+        // })
     }
-
-//     let a=10;
-//         let b=20;
-//         let c=30
-// const promise= new Promise((resolve,reject)=>{
-//     setTimeout(() => {
-        
-//         resolve(a+b+c)
-//     }, 2000);
-// })
-
-// promise.then((result)=>{
-//     console.log(result);
-    
-// })
 
 
  

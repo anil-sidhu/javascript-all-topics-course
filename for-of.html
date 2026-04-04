@@ -9,7 +9,7 @@
             // if(char=="b"){
             //     break;
             // }
-            if(char=="e"){
+            if(Char=="e"){
                 continue;
             }
              console.log(char);
@@ -25,6 +25,18 @@
 
 <body>
     <h1>For Of Loop</h1>
+    <div id="output"></div>
+
+    <script>
+        const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        const outputDiv = document.getElementById("output");
+
+        for (const fruit of fruits) {
+            const p = document.createElement("p");
+            p.textContent = fruit;
+            outputDiv.appendChild(p);
+        }
+    </script>
 </body>
 
 </html>

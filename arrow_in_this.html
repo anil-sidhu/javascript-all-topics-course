@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title> This Keyword with Arrow function </title>
+</head>
+
+<body>
+    <h1>This Keyword with Arrow function</h1>
+    <script>
+      
+   const userData={
+    userName:'anil sidhu',
+    //  getName:()=>{
+    //     console.log(this)
+    // }
+    print:function(){
+        setTimeout(()=>{
+            console.log(this.userName);
+            
+        }, 0);
+    }
+   }
+   userData.print()
+    </script>
+</body>
+
+</html>

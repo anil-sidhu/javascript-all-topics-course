@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Async Await</title>
+    </head>
+    <body>
+        <h1>Async Await</h1>
+        <script>
+             const loginPromise= new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve({login:true,name:'anil sidhu'})
+                }, 2000);
+             })
+
+             const tokenPromise= new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve({token:'sdhcskd232379230293927393'})
+                }, 3000);
+             })
+           
+             
+           async function handleLoginPromise(){
+                const result = await loginPromise;
+                const tokenResult = await tokenPromise;
+
+                console.log(result,tokenResult);
+                
+            }
+
+            handleLoginPromise()
+
+             
+        </script>
+    </body>
+</html>

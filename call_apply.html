@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title> Call, Apply in JavaScript </title>
+</head>
+
+<body>
+    <h1>Call, Apply in JavaScript </h1>
+    <script>
+
+        const user = {
+            name: 'anil sidhu',
+            age: 29,
+           
+        }
+
+        const admin = {
+            name: 'peter',
+            age: 45,
+        }
+
+          const student = {
+            name: 'sam',
+            age: 15,
+        }
+
+         function showDetails  (city,country) {
+                console.log("my name is " + this.name + " and my age is " + this.age);
+            }
+        //    user.showDetails()
+        // admin.showDetails()
+        // user.showDetails.call(admin)
+        // user.showDetails.call(student)
+        // showDetails.call(user,"noida","india")
+        showDetails()
+
+    </script>
+</body>
+
+</html>
