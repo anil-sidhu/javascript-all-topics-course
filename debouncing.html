@@ -3,37 +3,25 @@
 <head>
     <title>Debounce</title>
     <script>
-
-        function debounce(fn, delay) {
-            let timer;
-
-            return function (...args) {
-                clearTimeout(timer);
-
-                timer = setTimeout(() => {
-                    fn.apply(this, args);
-                }, delay);
-            };
+         let timer;
+        function callAPI() {
+            console.log("api call done")
+        }
+        function handleSearch() {
+            clearTimeout(timer)
+           
+           timer= setTimeout(() => {
+                callAPI()
+            }, 1000);
         }
 
-        function handleInput(event) {
-            console.log("type",event.target.value);
-        }
-
-        const debouncedSearch = debounce(handleInput, 500);
-
-        // // Simulate typing
-        // debouncedSearch("a");
-        // debouncedSearch("ab");
-        // debouncedSearch("abc");
-
-       
     </script>
 </head>
 
 <body>
     <h1>Debounce in JavaScript</h1>
-    <input type="text" onkeypress="handleInput(event)" placeholder="enter">
+    <input type="text" onkeypress="handleSearch()" placeholder="enter something for search" />
+
 </body>
 
 </html>
