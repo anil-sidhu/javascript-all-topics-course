@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Listener JavaScript</title>
+</head>
+
+<body>
+    <h1>Event Listener JavaScript</h1>
+    <!-- <button onclick="handleButton()" >call function</button> -->
+     <button id="btn" >call function</button>
+    <script>
+
+        document.addEventListener("click",handleButton)
+        function handleButton(){
+            console.log("handleButton called");
+            
+        }
+        // document.addEventListener("click",function(){
+        //     console.log("function called");
+            
+        // })
+
+        // document.addEventListener("click",()=>{
+        //     console.log("function called");
+            
+        // })
+
+        // document.addEventListener("click",function(){
+        //     console.log("second function called");
+            
+        // })
+    </script>
+</body>
+
+</html>

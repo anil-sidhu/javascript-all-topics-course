@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API Integration in JavaScript</title>
+    <style>
+        #ul {
+            border: 1px solid #ccc;
+            padding: 10px;
+            list-style-type: disc;
+        }
+
+        #ul li {
+            margin-bottom: 5px;
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="handleAPI()" >Load API Data</button>
+    <ul id="ul">
+
+    </ul>
+    <script>
+        async function handleAPI(){
+            let response = await fetch("https://dummyjson.com/products");
+            response = await response.json()
+            console.log(response);
+            let ul  = document.querySelector("#ul");
+            let collection ="";
+            for(let item of response.products){
+                console.log(item.title);
+                collection+="<li>"+item.title+"</li>";
+                
+            }
+            ul.innerHTML=collection
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Getter and Setter</title>
+</head>
+
+<body>
+    <h1>Getter and Setter</h1>
+    <script>
+       let obj={
+        firstName:"Anil",
+        lastName :"Sidhu",
+        set setName(fullName){
+            const breakName= fullName.split(" ");
+            this.firstName= breakName[0];
+            this.lastName= breakName[1]
+        },
+        get getName(){
+            return "Hello my name is "+ this.firstName +" "+this.lastName;
+        }
+
+       }
+
+       obj.setName("")
+       console.log(obj.getName);
+       
+
+
+       
+
+
+
+    </script>
+</body>
+
+</html>

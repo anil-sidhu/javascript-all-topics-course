@@ -1,0 +1,43 @@
+import React from 'react';
+import './style.css';
+
+export default function App() {
+  let time = 0;
+  const handleScroll = (event) => {
+    clearTimeout(time);
+    time = setTimeout(() => {
+      console.log('Stopped');
+    }, 1000);
+  };
+  return (
+    <div>
+      <h1>Hello StackBlitz!</h1>
+      <div onScroll={handleScroll} className="scroll">
+        Hello StackBlitzHello StackBlitzHello StackBlitzHello StackBlitz Hello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitzHello
+        StackBlitzHello StackBlitzHello StackBlitzHello StackBlitz
+      </div>
+    </div>
+  );
+}

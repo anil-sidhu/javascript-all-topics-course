@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DOM Manipulation </title>
+</head>
+
+<body>
+  <h1 class="one two"  custom-data="custom-heading">DOM Manipulation </h1>
+  <button onclick="handleDom()" >Update DOM</button>
+  <!-- <button onclick="changeDom()" >Change DOM</button> -->
+
+  <script>
+    let headingControl= document.querySelector("h1");
+    function handleDom(){
+    //  headingControl.innerText="Hello dom"
+    // headingControl.style.color="green"
+    // headingControl.setAttribute("id","heading")
+    // headingControl.setAttribute("title","heading")
+    // console.log(headingControl.getAttribute("custom-data"));
+    // headingControl.classList.add("heading-style")
+    // headingControl.classList.remove("two")
+    headingControl.classList.toggle("two")
+
+    
+      
+    } 
+    // function changeDom(){
+    //   headingControl.innerText="Hello Anil Sidhu"
+    // }
+  </script>
+</body>
+
+</html>

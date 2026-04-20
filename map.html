@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Map in JavaScript</title>
+</head>
+<body>
+    <h1>Map in JavaScript</h1>
+    <script>
+        const userData= new Map();
+        userData.set('name',"Anil sidhu")
+        userData.set('age',20)
+        userData.set('email',"Anil@sidhu.com")
+        userData.set(1,"this is a number")
+        userData.set(true,"this is a bool value")
+
+
+        // console.log(userData.has('email'));
+        // userData.delete(1)
+        // userData.clear()
+
+        // console.log(userData.size);
+        userData.forEach((item)=>{
+            console.log(item);
+            
+        })
+        
+        
+        
+    </script>
+</body>
+</html>

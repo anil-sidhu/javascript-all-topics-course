@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classes in JavaScript</title>
+</head>
+
+<body>
+    <h1>Classes in JavaScript</h1>
+   <script>
+//     class User{
+//         name=undefined;
+
+//         constructor(){
+//            this.name="User"
+            
+//         }
+
+//         setName(name){
+        
+//             this.name=name;
+//         }
+//         getName(){
+//             return "Hello my name is "+ this.name
+//         }
+
+//     }
+//    let  student= new User();
+//    student.setName("Peter")
+
+
+//     let  teacher= new User();
+//    teacher.setName("amit")
+
+//    console.log(student.getName());
+//    console.log(teacher.getName());
+
+class Auth{
+    login(email,password){
+
+    }
+    signUp(email,name,password,age){
+
+        if(email && name && password &&age){
+            return "new user added"
+        }else{
+            return "some error"
+        }
+
+    }
+}
+
+let student = new Auth();
+console.log(student.signUp("anil@test.com","anil","12345"));
+
+
+   
+   </script>
+</body>
+
+</html>
