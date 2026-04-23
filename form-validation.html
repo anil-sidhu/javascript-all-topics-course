@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form Handling</title>
+</head>
+
+<body>
+    <h1>Form Handling</h1>
+    
+    <form id="userForm" action="">
+        <input type="text" name="name" placeholder="enter name">
+        <br><br>
+        <input type="text" name="email" placeholder="enter email">
+        <br><br>
+        <input type="text" name="age" placeholder="enter age">
+
+        <br><br>
+        <button>Signup</button>
+    </form>
+
+    <script>
+        document.addEventListener("submit", (event) => {
+            event.preventDefault();
+            // console.log("form submitted");
+            let form = document.querySelector("#userForm")
+            const formData = new FormData(form);
+            
+  for (let value of formData.entries()) {
+                console.log(value[1]);
+                
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

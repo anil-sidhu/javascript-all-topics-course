@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form Handling</title>
+</head>
+
+<body>
+    <h1>Form Handling</h1>
+    <input type="text" id="name" placeholder="enter name">
+    <br><br>
+    <input type="text" id="email" placeholder="enter email">
+    <br><br>
+    <input type="password" id="password" placeholder="enter password">
+    <br><br>
+    <button id="submit">Submit</button>
+
+    <script>
+        let name = document.querySelector("#name");
+        let email = document.querySelector("#email");
+        let password = document.querySelector("#password");
+
+        let submit = document.querySelector("#submit")
+        submit.disabled = true
+
+        submit.addEventListener("click", function () {
+            console.log(name.value , email.value , password.value);
+        })
+        name.addEventListener("input",checkInputValue);
+        email.addEventListener("input",checkInputValue);
+        password.addEventListener("input",checkInputValue);
+
+
+        function checkInputValue(){
+            
+            if(name.value && email.value && password.value){
+                submit.disabled=false
+            }else{
+                submit.disabled=true
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
