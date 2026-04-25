@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LocalStorage</title>
+</head>
+
+<body>
+    <h1 id="heading"> LocalStorage</h1>
+    <input id="task" type="text" placeholder="tell me the next task">
+    <button onclick="store()" >Store</button>
+    <button onclick="display()" >Display</button>
+    <button onclick="clearData()" >Clear</button>
+
+
+    <!-- <input type="text" id="user-name" placeholder="enter name"> -->
+    <!-- <button onclick="storeData()" >Show User Name</button> -->
+    <script>
+        function store(){
+            let task = document.querySelector("#task").value
+            localStorage.setItem("task",task)
+        }
+        function display(){
+           let task= localStorage.getItem("task")
+           if(task){
+           document.querySelector("#heading").innerHTML=task
+
+           }
+        }
+        function clearData(){
+            console.log("called");
+            
+            localStorage.removeItem("task");
+            document.querySelector("#heading").innerHTML="Heading"
+        }
+
+        display()
+
+    //    function showData(){
+    //     let localData= localStorage.getItem("user-name");
+    //     if(localData){
+    //      document.querySelector("#heading").innerHTML=localData
+
+    //     }
+    //     }
+
+    //     showData()
+    //     function storeData(){
+    //         let data = document.querySelector("#user-name").value;
+    //         localStorage.setItem("user-name",data)
+    //         console.log(data);
+    //         showData()
+    //         // document.querySelector("#heading").innerHTML=data
+            
+            
+    //     }
+    </script>
+</body>
+
+</html>

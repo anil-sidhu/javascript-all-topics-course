@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Session Storage</title>
+</head>
+
+<body>
+    <h1 id="heading"> Session Storage</h1>
+    <input id="user-name" type="text" placeholder="enter user name">
+    <button onclick="addSessionData()" >Add Data</button>
+    <button onclick="displaySessionData()" >Display Data</button>
+    <button onclick="removeData()" >Remove Data</button>
+    <button onclick="removeAllData()" >Remove All Data</button>
+
+    <script>
+        displaySessionData()
+        function addSessionData(){
+            let userName= document.querySelector("#user-name").value
+          sessionStorage.setItem("user-name",userName)  
+        }
+
+        function displaySessionData(){
+            let sessionData= sessionStorage.getItem("user-name")
+            if(sessionData){
+ document.querySelector("#heading").innerHTML=sessionData
+            }
+           
+        }
+        function removeData(){
+            sessionStorage.removeItem("user-name");
+            document.querySelector("#heading").innerHTML="Heading"
+        }
+
+        function removeAllData(){
+            sessionStorage.clear()
+            document.querySelector("#heading").innerHTML="Heading"
+        }
+    </script>
+
+</body>
+
+</html>

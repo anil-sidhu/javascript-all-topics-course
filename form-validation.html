@@ -7,14 +7,16 @@
 
 <body>
     <h1>Form Handling</h1>
-    
+    <ul id="msg" style="color: red;">
+
+    </ul>
     <form id="userForm" action="">
         <input type="text" name="name" placeholder="enter name">
         <br><br>
         <input type="text" name="email" placeholder="enter email">
         <br><br>
-        <input type="text" name="age" placeholder="enter age">
-
+        <input type="text" id="age" name="age" placeholder="enter age">
+        <span id="age-error" style="color: red;"></span>
         <br><br>
         <button>Signup</button>
     </form>
@@ -25,11 +27,23 @@
             // console.log("form submitted");
             let form = document.querySelector("#userForm")
             const formData = new FormData(form);
-            
-  for (let value of formData.entries()) {
-                console.log(value[1]);
-                
+            let ul = document.querySelector("#msg");
+            let collection = "";
 
+            for (let value of formData.entries()) {
+                console.log(value[1]);
+                if (value[1] == "") {
+                    collection += "<li>" + value[0] + " not valid</li>";
+                }
+
+
+            }
+            ul.innerHTML=collection;
+            let age = document.querySelector("#age").value;
+            if(isNaN(age)){
+                document.querySelector("#age-error").innerHTML="Age must be a number"
+            }else{
+                 document.querySelector("#age-error").innerHTML=""
             }
 
         })

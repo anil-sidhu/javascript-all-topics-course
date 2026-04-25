@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resto App</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        width: 320px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #007bff;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    li {
+        background: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li button {
+        width: auto;
+        padding: 5px 10px;
+        background: #dc3545;
+        font-size: 12px;
+    }
+
+    li button:hover {
+        background: #a71d2a;
+    }
+</style>
+</head>
+
+<body>
+ <body>
+    <div class="container">
+        <h1>Resto App</h1>
+        <input type="text" id="name" placeholder="enter food name">
+        <input type="number" id="price" placeholder="enter price">
+        <button onclick="addFood()">Add Food</button>
+        <ul id="list"></ul>
+    </div>
+</body>
+    <script>
+        let localData=JSON.parse(localStorage.getItem("food"));
+        let food=localData? localData :[];
+        console.log(food);
+        displayFood()
+        
+        function addFood(){
+            const name = document.querySelector("#name").value;
+            const price = document.querySelector("#price").value;
+            const id= Date.now();
+            const collection={name,price,id}
+            food.push(collection)
+            localStorage.setItem("food",JSON.stringify(food))
+            displayFood()
+
+        }
+
+        function displayFood(){
+            let list = document.querySelector("#list");
+            let collection ="";
+            for (const item of food) {
+                collection+="<li>"+item.name+"-"+item.price+"<button onclick=deleteFood("+item.id+")>Delete</button></li>"
+            }
+            list.innerHTML=collection
+
+        }
+
+        function deleteFood(id){
+            food = food.filter((item)=>item.id!==Number(id));
+            localStorage.setItem("food",JSON.stringify(food))
+           displayFood()
+            
+        }
+    </script>
+
+</body>
+
+</html>

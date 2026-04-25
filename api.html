@@ -2,33 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>API Integration in JavaScript</title>
-
+  <title>API Integration in JavaScript</title>
 </head>
 
 <body>
-<button onclick="handleAPI()" >Load API Data</button>
-<ul id="list">
+ <button onclick="handleAPI()" >Load API Data</button>
+ <ul id="list">
 
-</ul>
-<script>
-   async function handleAPI(){
-      let response = await fetch("https://dummyjson.com/products");
-      response = await response.json()
-      let list= document.querySelector("#list")
-      let collection="";
-      for(item of response.products )
-      {
-        console.log(item.title);
-        collection+= `<li>${item.title}</li>`
-        
-       
-      }
-       list.innerHTML=collection
-      
-        
-    }
-</script>
+ </ul>
+  <script>
+async function handleAPI(){
+  const url="https://dummyjson.com/products";
+  let response = await fetch(url);
+  response = await response.json()
+  console.log(response.products);
+  let collection = "";
+  for(product of response.products){
+    console.log(product.title);
+    collection+="<li>"+product.title+"</li>"
+  
+  }
+  const list  = document.querySelector("#list");
+  list.innerHTML=collection
+  
+}
+  </script>
 </body>
 
 </html>
