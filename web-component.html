@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web Component </title>
+</head>
+
+<body>
+    <h1>Web Component</h1>
+    <custom-element name="Email" id="email" ></custom-element>
+    <custom-element name="password"  id="password" ></custom-element>
+    <custom-element name="age"  id="age" ></custom-element>
+    <custom-element name="address"  id="address"></custom-element>
+<script>
+    class CustomComponent  extends HTMLElement{
+        connectedCallback(){
+            const name = this.getAttribute("name");
+            const id = this.getAttribute("id");
+
+            this.innerHTML=`<label for=${id} >${name}</label>
+            <input type="text" id=${id}  placeholder="enter value" /> </br></br>`
+        }
+    }
+    customElements.define("custom-element",CustomComponent )
+</script>
+</body>
+
+</html>
