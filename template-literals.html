@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>Template Literals in JavaScript</title>
+</head>
+
+<body>
+    <h1>Template Literals in JavaScript</h1>
+    <script>
+        let name="anil sidhu";
+        // age=29;
+        // let str ="my name is "+name+" and my age is "+age+".";
+        // let str =`my name is ${name} and age is ${age} and total is ${age*3}.`
+        // console.log(str);
+        function greet(strings,value){
+            return strings[0] + value.toUpperCase()
+        }
+        console.log(greet`hello ${name}`)
+    </script>
+</body>
+
+</html>
