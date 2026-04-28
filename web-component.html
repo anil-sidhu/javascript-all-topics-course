@@ -3,26 +3,48 @@
 
 <head>
     <title>Web Component </title>
+    <style>
+        label {
+            color: green;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Web Component</h1>
-    <custom-element name="Email" id="email" ></custom-element>
-    <custom-element name="password"  id="password" ></custom-element>
-    <custom-element name="age"  id="age" ></custom-element>
-    <custom-element name="address"  id="address"></custom-element>
-<script>
-    class CustomComponent  extends HTMLElement{
-        connectedCallback(){
-            const name = this.getAttribute("name");
-            const id = this.getAttribute("id");
+    <custom-element name="Email" id="email"></custom-element>
+    <custom-element name="password" id="password"></custom-element>
+    <custom-element name="age" id="age"></custom-element>
+    <custom-element name="address" id="address"></custom-element>
+    <button onclick="getAccess()">Access</button>
+    <script>
+        class CustomComponent extends HTMLElement {
+            connectedCallback() {
+                const name = this.getAttribute("name");
+                const id = this.getAttribute("id");
+                const shadow = this.attachShadow({ mode: "closed" })
 
-            this.innerHTML=`<label for=${id} >${name}</label>
-            <input type="text" id=${id}  placeholder="enter value" /> </br></br>`
+                shadow.innerHTML = `
+            <style>
+        label{
+            color: red;
+            font-weight: bold;
         }
-    }
-    customElements.define("custom-element",CustomComponent )
-</script>
+    </style>
+            <label for=${id} >${name}</label>
+            <input type="text" id=${id}  placeholder="enter value" /> </br></br>`
+            }
+        }
+        customElements.define("custom-element", CustomComponent)
+
+        function getAccess() {
+            const customEl = document.querySelector("#email");
+            const customInput = customEl.shadowRoot.querySelector("#email");
+            console.log(customInput.value);
+
+        }
+    </script>
 </body>
 
 </html>
