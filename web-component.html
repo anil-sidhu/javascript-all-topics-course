@@ -1,50 +1,20 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Web Component </title>
-    <style>
-        label {
-            color: green;
-            font-size: 30px;
-        }
-    </style>
-</head>
-
 <body>
-    <h1>Web Component</h1>
-    <custom-element name="Email" id="email"></custom-element>
-    <custom-element name="password" id="password"></custom-element>
-    <custom-element name="age" id="age"></custom-element>
-    <custom-element name="address" id="address"></custom-element>
-    <button onclick="getAccess()">Access</button>
+    <custom-element></custom-element>
+    <custom-element></custom-element>
+    <custom-element></custom-element>
+    <custom-element></custom-element>
+
+
     <script>
         class CustomComponent extends HTMLElement {
             connectedCallback() {
-                const name = this.getAttribute("name");
-                const id = this.getAttribute("id");
-                const shadow = this.attachShadow({ mode: "closed" })
-
-                shadow.innerHTML = `
-            <style>
-        label{
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-            <label for=${id} >${name}</label>
-            <input type="text" id=${id}  placeholder="enter value" /> </br></br>`
+                this.innerHTML = `
+            <label >Input</label>
+            <input type="text" placeholder="enter value" /> </br></br>`
             }
         }
         customElements.define("custom-element", CustomComponent)
-
-        function getAccess() {
-            const customEl = document.querySelector("#email");
-            const customInput = customEl.shadowRoot.querySelector("#email");
-            console.log(customInput.value);
-
-        }
     </script>
 </body>
-
 </html>
