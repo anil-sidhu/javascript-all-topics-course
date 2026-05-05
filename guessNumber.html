@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+    <h1>Guess the  between 0 to 100</h1>
+    <h3>Result :-<span id="result"></span></h3>
+    <input type="number" id="input" placeholder="enter number">
+    <button id="guess" >Guess</button>
+    <h3>Total Click <span id="clicks" >0</span></h3>
+
+<script>
+    const inputEl = document.querySelector("#input");
+    const resultEl = document.querySelector("#result");
+    const guessEl = document.querySelector("#guess");
+    const clickEl = document.querySelector("#clicks");
+
+    let randomNum= Math.floor(Math.random()*100);
+    let clicks=0
+    // console.log(randomNum);
+
+    guessEl.addEventListener("click",()=>{
+        clicks++;
+        clickEl.innerHTML=clicks
+        let input = Number(inputEl.value);
+
+        if(input== randomNum){
+            resultEl.innerHTML="You win "
+        }else if(input>randomNum){
+            resultEl.innerHTML="Try lower number "
+        }
+        else if(input<randomNum){
+            resultEl.innerHTML="Try higher number "
+        }
+        console.log(input);
+        
+    })
+    
+ 
+
+</script>
+</body>
+
+</html>
