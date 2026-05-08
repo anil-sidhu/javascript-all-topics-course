@@ -8,46 +8,36 @@
 
 <body>
     <h1>Try catch with async await in JavaScript</h1>
+    <button onclick="abortCall()">Abort Request</button>
+    <button onclick="apiCall()">Abort Request</button>
+
     <script>
+
+
+
+        const controller = new AbortController();
+        const signal = controller.signal;
+
+
+        function abortCall() {
+            controller.abort();
+        }
+
         async function apiCall() {
 
             try {
-                const url = "https://jsonplaceholder.typicode.co/posts/1";
-                let response = await fetch(url);
-                response = await response.json();
-                console.log(response);
-
-                alert("first api call done")
-
-
-
-            } catch (error) {
-                console.log(error.message);
-                alert(error.message + " please check url and other params in first api")
-
-            }finally{
-                console.log("clean your data o close loader for 1st api")
-            }
-
-
-            try {
-                const url2 = "https://jsonplaceholder.typicode.co/posts/";
-                let response2 = await fetch(url2);
+                const url2 = "https://jsonplaceholder.typicode.com/posts/";
+                let response2 = await fetch(url2, { signal });
                 response2 = await response2.json();
                 console.log(response2);
-                alert("second api call done")
-
-
 
             } catch (error) {
                 console.log(error.message);
-                alert(error.message + " please check url and other params in second api")
 
             }
-
         }
 
-        apiCall()
+        // apiCall()
     </script>
 </body>
 
